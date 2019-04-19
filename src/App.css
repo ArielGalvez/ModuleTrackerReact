@@ -1,0 +1,11 @@
+:root {
+  --primary: #F28B0C;
+  --secondary: #385059;
+  --primary-light: #f26a4b;
+  --secondary-light: #aab7bf;
+  --succes: #5cb85c;
+  --warning: #f0ad4e;
+  --danger: #d9534f;
+  --info: #5bc0de;
+  --locked: #aaaaaa;
+}

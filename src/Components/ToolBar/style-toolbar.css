@@ -1,0 +1,41 @@
+.toolbar-component {
+    width: 100%;
+    height: 60px;
+    background: var(--secondary);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+.toolbar-component .logo-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80%;
+    width: 50%;
+}
+
+.toolbar-component .user-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height: 90%;
+    width: 50%;
+}
+
+.toolbar-component .logo-section .logo {
+    
+    height: inherit;
+    margin-left: 20px;
+}
+
+.toolbar-component .user-section .username {
+    font-size: 18px;
+}
+
+.user-section .username, .user-section .avatar {
+    margin-right: 30px;
+}

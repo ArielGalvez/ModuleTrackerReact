@@ -1,0 +1,22 @@
+.circle label {
+    color: white;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    font-weight: bold;
+}
+
+.circle {
+    display: table;
+    background-color: #f28b0c;
+}
+
+.avatar {
+    float: left;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,13 @@
+.dropdown {
+    border:none;
+    border-bottom: 1px solid #F28B0C;
+    color: #385059;
+}
+
+.element-dropdown {
+    color: #385059;
+}
+
+.dropdown option:first-child {
+    display: none;
+}

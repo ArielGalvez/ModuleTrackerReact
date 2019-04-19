@@ -1,0 +1,23 @@
+.textarea-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+textarea {
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    outline: none;
+}
+
+.textarea-label {
+    font-size: 12px;
+    color: #999999;
+}
+
+.text-visible {
+    display: none;
+}
+

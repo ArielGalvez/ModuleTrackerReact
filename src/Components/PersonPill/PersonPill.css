@@ -1,0 +1,53 @@
+.person-pill {
+    display: inline-block;
+    opacity: 0.9;
+    -webkit-box-shadow: 0px 0px 10px -2px #000000;
+    -moz-box-shadow: 0px 0px 10px -2px #000000;
+    box-shadow: 0px 0px 10px -2px #000000;
+    padding: 5px;
+    margin: 5px;
+    position: relative;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    
+    --fullname-font-size: 20px;
+    --fullname-font-color: #555555;
+}
+.person-pill:hover {
+    opacity: 1;
+
+}
+
+.person-pill:active {
+    background: var(--primary);
+}
+
+.person-pill:active .circle, .person-pill:active .circle label {
+    background: white;
+    color: var(--fullname-font-color);
+}
+
+.person-pill .content-pill {
+    float: left;
+    width: calc(100% - 80px);
+    height: 100%;
+}
+
+.person-pill .content-pill h3 {
+    margin: 5px;
+    width: 95%;
+    text-align: left;
+    color: var(--fullname-font-color);
+    font-size: var(--fullname-font-size);
+}
+
+.content-pill p {
+    display: inline;
+    color: var(--fullname-font-color);
+    padding-left: 20px;
+}
+
+.selected {
+    background-color: var(--primary);
+}
