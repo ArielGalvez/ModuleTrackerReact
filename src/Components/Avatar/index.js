@@ -8,7 +8,7 @@ function Avatar({ src, name, size }) {
     const initials = userName.split(' ');
     const firstName = initials[0][0];
     const lastName = initials[1][0];
-    return firstName + ' ' + lastName;
+    return firstName + lastName;
   };
 
   const styleSize = {

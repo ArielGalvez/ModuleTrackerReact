@@ -10,7 +10,7 @@ function Input({ onChange, onBlur, label, placeholder, errormessage, autofocus, 
   };
 
   const handleOnChanges = event => {
-    var result;
+    var result='';
     console.log(objectKey)
     switch (objectKey) {
       case 'name' || 'Paternal Last name' || 'Maternal Last Name':
@@ -41,7 +41,7 @@ function Input({ onChange, onBlur, label, placeholder, errormessage, autofocus, 
 
   return (
     <div className="form-field form-field-invalid">
-        <input id="field-text" type={type} value={value} onChange={handleOnChange} onBlur={handleOnChanges} autoFocus={autofocus} placeholder={placeholder}></input>
+        <input id="field-text" type={type} requiere value={value} onChange={handleOnChange} onBlur={handleOnChanges} autoFocus={autofocus} placeholder={placeholder}></input>
         <label className="form-field-label" htmlFor="field-text">{label}</label>
         <label className="form-field-label-error">{errormessage}</label>
     </div>

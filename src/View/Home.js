@@ -60,7 +60,7 @@ class Home extends Component {
     ]
     return (
       <div>
-        <ToolBar srcLogoImage={Logo} nameAvatar="Juan Perez" sizeAvatar='50px'></ToolBar>
+        <ToolBar srcLogoImage={Logo} nameAvatar="Juan Perez" sizeAvatar='32px'></ToolBar>
         <NavBar actions={actions} title={this.title}></NavBar>
       </div>
     );
