@@ -16,6 +16,7 @@ function Routes() {
           <Route exact path="/Trainer" component={CreateTrainer}/>
           <Route exact path="/Module" component={CreateModule}/>
           <Route exact path="/TestViews" component={TestViews}/>
+          <Route component={CreateStudent}/>
         </Switch>
       </BrowserRouter>
     </React.Fragment>

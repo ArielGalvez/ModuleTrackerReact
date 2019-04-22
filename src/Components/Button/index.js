@@ -5,15 +5,15 @@ import './style-button.css';
 
 const Button = ({ onClick, disabled, type, icon, text }) => {
   let classNameButton = "button";
-  const onClickButton = () => {
+  /* const onClickButton = () => {
     onClick();
-  }
+  } */
   if (type) {
     classNameButton = classNameButton + " " + type;
   }
 
   return (
-    <button className={classNameButton} disabled={disabled} onClick={onClickButton}>
+    <button className={classNameButton} disabled={disabled} onClick={onClick}>
       <MaterialIcon icon={icon} />
       <div>{text}</div>
     </button>

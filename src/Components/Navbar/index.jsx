@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import './navbar-style.css';
 
 function Navbar({ actions }) {
-  const mappedElements = actions.map(element =>
-    <div className={element.isActive} onClick={element.onClick}>
+  const mappedElements = actions.map((element, index) =>
+    <div key={index} className={element.isActive} onClick={element.onClick}>
       {element.text}
     </div>
   );

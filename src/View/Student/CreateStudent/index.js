@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import actions from './actions';
 import RegisterForm from '../../../Containers/RegisterForm';
 import StudentService from '../../../Services/StudentServices';
-import Message from '../../../Components/Message';
+// import Message from '../../../Components/Message';
 import './style-student.css';
+
 
 class CreateStudent extends React.Component {
   constructor() {
@@ -18,16 +19,16 @@ class CreateStudent extends React.Component {
     }
   };
 
-  giveMessage = (text, type, delay) => {
+  /* giveMessage = (text, type, delay) => {
     return <Message text={text} type={type} delay={delay} />
-  };
+  }; */
 
   handleChange = (key, value) => {
     this.props.updateFormStudent({ key, value });
   };
 
-  onBlurChange = (key, errorMessage) => {
-    this.props.updateFormErrorStudent({ key, errorMessage });
+  onBlurChange = (key) => {
+    this.props.updateFormErrorStudent({ key });
   };
   
   buttonSave = async () => {
@@ -159,11 +160,22 @@ render() {
 
   let disabledButton = this.changeDisabledButton(name.errorMessage, ci.errorMessage, email.errorMessage, phone.errorMessage, patternLastName.errorMessage, matternLastName.errorMessage);
 
+  const messageData= {
+    text: this.state.message.text, 
+    type: this.state.message.type,
+    visible: this.state.message.visible
+  }
+
   return (
     <div className="student">
-      <Message text={this.state.message.text} type={this.state.message.type} visible={this.state.message.visible} />
-      <RegisterForm arrayInput={inputData} textArea={textArea} onClick={this.buttonSave} disabled={disabledButton}/>
-    </div >
+      <RegisterForm 
+        arrayInput={inputData} 
+        textArea={textArea} 
+        onClick={this.buttonSave} 
+        disabled={disabledButton} 
+        messageData={messageData}
+      />
+    </div>
     )
 }
 }

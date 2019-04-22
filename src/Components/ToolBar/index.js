@@ -9,7 +9,7 @@ function ToolBar({ srcLogoImage, srcAvatar, nameAvatar, sizeAvatar }) {
     <section className="toolbar-component">
 
       <div className="logo-section">
-        <img className="logo" src={srcLogoImage} />
+        <img className="logo" src={srcLogoImage} alt= {'title here!'}/>
       </div>
 
       <div className="user-section">

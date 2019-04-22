@@ -83,19 +83,12 @@ function CLEAN_MODULE_FORM(state, action) {
 
 export default function CreateModule(state = initialState, action) {
   switch (action.type) {
-    case 'ADD_STUDENT':
-      return ADD_STUDENT(state, action);
-    case 'ADD_TRAINER':
-      return ADD_TRAINER(state, action);
-    case 'UPDATE_MODULE_NAME':
-      return UPDATE_MODULE_NAME(state, action);
-    case 'UPDATE_MODULE_NAME':
-      return UPDATE_MODULE_ERROR_MESSAGE(state, action)
-    case 'UPDATE_MODULE_ERROR_MESSAGE':
-      return CLEAN_MODULE_FORM(state, action);
-    case 'UPDATE_MODULE_TYPE':
-      return UPDATE_MODULE_TYPE(state, action);
-    default:
-      return state;
+    case 'ADD_STUDENT': return ADD_STUDENT(state, action);
+    case 'ADD_TRAINER': return ADD_TRAINER(state, action);
+    case 'UPDATE_MODULE_NAME': return UPDATE_MODULE_NAME(state, action);
+    case 'UPDATE_MODULE_ERROR_MESSAGE': return UPDATE_MODULE_ERROR_MESSAGE(state, action)
+    case 'CLEAN_MODULE_FORM': return CLEAN_MODULE_FORM(state, action);
+    case 'UPDATE_MODULE_TYPE': return UPDATE_MODULE_TYPE(state, action);
+    default: return state;
   }
 }

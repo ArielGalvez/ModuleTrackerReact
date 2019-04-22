@@ -1,3 +1,4 @@
+import Validator from '../../../Components/Validator';
 
 const initialState = {
   name: {
@@ -116,7 +117,8 @@ function UPDATE_STUDENT_ERRORMESSAGE(state, action) {
     case 'name':
     {
       let newName = { ...state.name };
-      newName.errorMessage = action.payload.errorMessage;
+      newName.errorMessage =  Validator().validateName(newName.value);
+      // console.log(newName)
       return {
         ...state,
         name: newName
@@ -124,7 +126,7 @@ function UPDATE_STUDENT_ERRORMESSAGE(state, action) {
     }
     case 'Paternal Last name':{
       let newPatternLastName = { ...state.patternLastName };
-      newPatternLastName.errorMessage = action.payload.errorMessage;
+      newPatternLastName.errorMessage = Validator().validateName(newPatternLastName.value);
       return {
         ...state,
         patternLastName: newPatternLastName
@@ -133,7 +135,7 @@ function UPDATE_STUDENT_ERRORMESSAGE(state, action) {
 
     case 'Maternal Last Name':{
       let newMatternLastName = { ...state.matternLastName };
-      newMatternLastName.errorMessage = action.payload.errorMessage;
+      newMatternLastName.errorMessage = Validator().validateName(newMatternLastName.value);
       return {
         ...state,
         matternLastName: newMatternLastName
@@ -142,7 +144,7 @@ function UPDATE_STUDENT_ERRORMESSAGE(state, action) {
 
       case 'CI':{
       let newCI = { ...state.ci };
-      newCI.errorMessage = action.payload.errorMessage;
+      newCI.errorMessage = Validator().validateCi(newCI.value);
       return {
         ...state,
         ci: newCI
@@ -151,7 +153,7 @@ function UPDATE_STUDENT_ERRORMESSAGE(state, action) {
 
       case 'Email':{
       let newEmail = { ...state.email };
-      newEmail.errorMessage = action.payload.errorMessage;
+      newEmail.errorMessage = Validator().validateEmail(newEmail.value);
       return {
         ...state,
         email: newEmail
@@ -160,7 +162,7 @@ function UPDATE_STUDENT_ERRORMESSAGE(state, action) {
 
       case 'Phone':{
       let newPhone = { ...state.phone };
-      newPhone.errorMessage = action.payload.errorMessage;
+      newPhone.errorMessage = Validator().validateTelf(newPhone.value);
       return {
         ...state,
         phone: newPhone

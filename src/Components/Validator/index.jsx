@@ -1,4 +1,4 @@
-export default function Validator(){
+/* export default function Validator(){
     return {
         validateName: (name) => {
             const regex = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
@@ -51,6 +51,39 @@ export default function Validator(){
                 isValid: regex.test(ci),
                 error: 'The number should have between 7 and 8 digits'
             };
+        }
+    };
+} */
+export default function Validator(){
+    const messageEmpty = 'no debe ser vacio';
+    return {
+        validateName: (name) => {
+            const regex = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+            if (name === '') {
+                return messageEmpty;
+            }
+            return regex.test(name)? '': 'Must start with capital letters and not contains numbers';
+        },
+        validateTelf: (telf) => {
+            const regex = /^[7|6|4]{1}[0-9]{6,7}$/;
+            if (telf === '') {
+                return messageEmpty;
+            }
+            return regex.test(telf)? '': 'The number should start with 7, 6 or 4 and be between 7 and 8 digits';
+        },
+        validateEmail: (email) => {
+            const regex = /^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/;
+            if (email === '') {
+                return messageEmpty;
+            }
+            return regex.test(email)? '': 'Enter a valid email';
+        },
+        validateCi: (ci) => {
+            const regex = /^[1-9]{1}[0-9]{6,7}$/;
+            if (ci === '') {
+                return messageEmpty;
+            }
+            return regex.test(ci)? '': 'The number should have between 7 and 8 digits';
         }
     };
 }

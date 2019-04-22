@@ -53,7 +53,6 @@ class CreateModule extends Component {
 
     return (
       <div className="CreateModule">
-        <form>
           <Dropdown typesList={optionList} onClick={onClick2} placeHolder={'select an option'} title={'Type'}></Dropdown>
           <Input
             onChange={this.handleChangeModuleName}
@@ -73,7 +72,6 @@ class CreateModule extends Component {
             type='primary'
             text='Save'
           />
-        </form>
       </div>
     )
   }

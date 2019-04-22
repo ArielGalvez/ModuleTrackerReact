@@ -2,10 +2,11 @@ import React from 'react';
 import Input from '../../Components/Input';
 import ButtonComponent from '../../Components/Button';
 import TextAreaComponent from '../../Components/TextArea';
+import Message from '../../Components/Message';
 import './register-form.css';
 import PropTypes from 'prop-types';
 
-function RegisterForm({ arrayInput, textArea, onClick, disabled }) {
+function RegisterForm({ arrayInput, textArea, onClick, disabled, messageData }) {
   const saveOnClick = ()=> {
     onClick();
   }
@@ -29,7 +30,8 @@ function RegisterForm({ arrayInput, textArea, onClick, disabled }) {
 
   return (
     <div className='register-form'>
-      <form>
+      {/* <form> */}
+        <Message text={messageData.text} type={messageData.type} visible={messageData.visible} />
         <div>
           {GiveInputs()}
         </div>
@@ -48,7 +50,7 @@ function RegisterForm({ arrayInput, textArea, onClick, disabled }) {
             objectKey={textArea.label}
           />
         </div>
-      </form>
+      {/* </form> */}
       <ButtonComponent
           onClick={saveOnClick}
           disabled={disabled}

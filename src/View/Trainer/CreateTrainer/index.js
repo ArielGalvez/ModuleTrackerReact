@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import actions from './actions';
 import RegisterForm from '../../../Containers/RegisterForm';
 import TrainerService from '../../../Services/TrainerServices';
-import Message from '../../../Components/Message';
 import './style-trainer.css';
 
 class CreateTrainer extends React.Component {
@@ -22,8 +21,8 @@ class CreateTrainer extends React.Component {
     this.props.updateFormTrainer({ key, value });
   };
 
-  onBlurChange = (key, errorMessage) => {
-    this.props.updateFormErrorTrainer({ key, errorMessage });
+  onBlurChange = (key) => {
+    this.props.updateFormErrorTrainer({ key });
   };
 
   buttonSave = async () => {
@@ -146,10 +145,22 @@ class CreateTrainer extends React.Component {
     }
 
     let disabledButton = this.changeDisabledButton(name.errorMessage, ci.errorMessage, email.errorMessage, phone.errorMessage, patternLastName.errorMessage, matternLastName.errorMessage);
+
+    const messageData= {
+      text: this.state.message.text, 
+      type: this.state.message.type,
+      visible: this.state.message.visible
+    }
+
     return (
       <div className="trainer">
-        <Message text={this.state.message.text} type={this.state.message.type} visible={this.state.message.visible} />
-        <RegisterForm arrayInput={inputData} textArea={textArea} onClick={this.buttonSave} disabled={disabledButton} />
+        <RegisterForm 
+          arrayInput={inputData} 
+          textArea={textArea} 
+          onClick={this.buttonSave} 
+          disabled={disabledButton} 
+          messageData={messageData}
+        />
       </div>
     )
   }
